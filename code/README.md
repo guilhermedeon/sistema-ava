@@ -9,6 +9,6 @@ A aplicação utiliza o banco de dados existente no local:
 >> .code/db.sqlite3
 
 # Opcional
-O arquivo db.sqlite3 é gerado automaticamente caso pela aplicação durante a primeira execução.
+O arquivo db.sqlite3 é gerado automaticamente pela aplicação durante a primeira execução.
 
 Como alternativa, temos na pasta ../sqlite_exemplo um arquivo db.sqlite3 pré populado com alguns valores para teste.
