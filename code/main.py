@@ -122,6 +122,8 @@ def update_by_id(request: AlunoRequest, db: Session = Depends(get_db), aluno_id:
         raise HTTPException(status_code=404, detail="Aluno nao encontrado")
     aluno = Aluno(**request.dict())
     aluno.id = aluno_id
+    if not AlunoRepository.exists_by_id(db,aluno.id_curso):
+        raise HTTPException(status_code=404, detail="Curso nao encontrado")
     aluno.curso = CursoRepository.find_by_id(db, aluno.id_curso)
     aluno = AlunoRepository.save(db, aluno)
     return AlunoResponse.from_orm(aluno)
